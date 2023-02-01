@@ -39,6 +39,7 @@ fi
 
 
 When developing c application it is better to develop it on vitis with elf file and when it workds put it in the project compile it and run auto in the startup.
+There is example project Gil_Server_with_Blink_LED_vitis_export_archive.ide
 
 
 
