@@ -1,1 +1,0 @@
-petalinux-create -t project -n T_Project_2022.2_Petalinux --template zynqMP
