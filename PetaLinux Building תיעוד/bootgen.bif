@@ -1,0 +1,9 @@
+the_ROM_image:
+{
+	[bootloader, destination_cpu=a53-0] /home/gil/2022PetaLinux/images/linux/zynqmp_fsbl.elf
+	[pmufw_image] /home/gil/2022PetaLinux/images/linux/pmufw.elf
+	[destination_device=pl] /home/gil/2022PetaLinux/images/linux/T_ZCU216_main_ver0_9c.bit
+	[destination_cpu=a53-0, exception_level=el-3, trustzone] /home/gil/2022PetaLinux/images/linux/bl31.elf
+	[destination_cpu=a53-0, load=0x00100000] /home/gil/2022PetaLinux/images/linux/system.dtb
+	[destination_cpu=a53-0, exception_level=el-2] /home/gil/2022PetaLinux/images/linux/u-boot.elf
+}
