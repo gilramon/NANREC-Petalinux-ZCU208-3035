@@ -1,0 +1,164 @@
+
+
+*****************************************************************
+	     BUILD BSP FOR ZCU208 FOR PIRHAH PROJECT                                
+
+
+-------------------------------------
+Adjusting Project for QSPI boot mode:
+-------------------------------------
+1.) Run from shell
+
+$ petalinux-config
+(In case of error run : petalinux-build -x mrproper)
+
+Wait for menu to open.
+
+Under Subsystem AUTO Hardware settings -> Flash setting : 
+create all partitons as needed:
+----------------------------
+part name 	   part size
+----------------------------	
+boot_oper	   0x2800000 
+boot_maintenance   0x2800000
+bootscr		   0x0180000
+kernel             0x4000000
+userdata	   0x4700000
+golden             0x2800000
+----------------------------
+
+under u-boot Configuration -> u-boot script configuration -> QSPI image offsets:
+update offsets as needed:
+---------------------------
+part 		  value 	
+---------------------------	
+kernel offset	 0x5180000 
+kernel size	 0x4000000
+Ramdisk offset	 0x6200000
+Ramdisk size	 0x6800000
+fit image offset 0x5180000
+fit image size	 0x4000000
+---------------------------
+
+Save and exit.
+
+
+
+
+
+--------------------------
+Config boot script offset:
+--------------------------
+Run from shell
+$ petalinux-config -c u-boot 
+
+under ARM architecture ----->> Boot script offset
+
+set offset to 0x5000000
+
+
+
+
+
+
+
+---------------
+Build project:
+---------------
+Run from shell
+$petalinux-build
+INFO] Successfully built project
+
+
+
+
+
+
+
+
+
+----------------
+Package project:
+----------------
+
+1. GOLDEN VERSION:
+petalinux-package  --boot --force --format BIN --fsbl --pmufw --u-boot --fpga -o BOOT.bin
+INFO: Binary is ready.
+WARNING: Unable to access the TFTPBOOT folder /tftpboot!!!
+WARNING: Skip file copy to TFTPBOOT folder!!!
+
+
+
+---------------
+Write to flash:
+---------------
+source petalinux/2021.2/settings.sh
+
+$petalinux-boot --jtag --v --u-boot
+
+#Stop in uboot:
+
+#Detect flash
+ZynqMP> sf probe 0 0 0
+SF: Detected mt25qu02g with page size 512 Bytes, erase size 128 KiB, total 512 MiB
+
+#Erase  flash
+ZynqMP> sf erase 0 0x10080000
+SF: 134217728 bytes @ 0x0 Erased: OK    
+
+#Lunch XSCT
+$ petalinux/2021.2/tools/xsct/bin/xsct
+
+#connect to target
+<XSCT> conn
+
+#select target
+<XSCT>tar 10
+
+#Write  BOOT.BIN to flash
+--------------------------------------------------------------------------------------------------------------
+<XSCT> dow -data BOOT.bin 0x100000
+
+ZynqMP> sf write 0x100000 0x0 0x2800000 
+device 0 offset 0x0, size 0x2800000
+SF: 41943040 bytes @ 0x0 Written: OK
+
+
+--------------------------------------------------------------------------------------------------------------
+#Write boot script to flash
+
+<XSCT> dow -data boot.scr 0x100000
+
+ZynqMP> sf write 0x100000 0x05000000 0x180000 
+device 0 offset 0x5000000, size 0x180000
+SF: 1572864 bytes @ 0x5000000 Written: O
+--------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+#Write image.ub to flash
+--------------------------------------------------------------------------------------------------------------
+<XSCT> dow -data image.ub 0x100000
+
+ZynqMP> sf write 0x100000 0x5180000 0x4000000
+device 0 offset 0x5180000, size 0x4000000
+SF: 67108864 bytes @ 0x5180000 Written: OK
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
