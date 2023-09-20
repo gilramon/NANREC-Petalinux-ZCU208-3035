@@ -1,0 +1,45 @@
+\\e-developer-programs.eyal.local\Files\Devel_Prog
+
+
+find_instr(1)
+nanrec_lattice_write_reg(6,0)
+nanrec_write_clkgen_uart('s:\3035-00\Development\System\LMK04832_HexRegisterValues_09_08_2023_inv_off.txt')
+nanrec_lattice_read_reg(9)
+nanrec_lattice_write_reg(6,1)
+
+
+---------------------------------------------------------------
+########## set jtag connection via xsdb.but / or under vitis XSCT console
+ 
+C:\Xilinx\Vivado_Lab\2022.2\bin\xsdb.bat
+C:\Xilinx\Vivado\2023.1\bin\xsdb.bat
+
+xsdb% connect
+source s:/3035-00/development/dpc/fpga/jtag_boot_mode.tcl
+
+source c:/temp_yossi/jtag_boot_mode.tcl
+
+-- from xilinx ---
+Launch XSCT
+type in below
+------------------
+xsct% connect
+
+readback jtag tool chain: tcfchan#0
+
+xsct% targets -set -nocase -filter {name =~ "*PSU*"}
+xsct% mwr 0xff5e0200 0x0100
+xsct% rst -system
+
+ 
+---------------------------------------------------------------
+read/write commands from free RTOS:
+
+
+wr32 a000_0000 a5
+rr32 a000_0000
+---------------------------------------------------------------
+
+
+
+https://ohwr.org/project/soc-course/wikis/MPSoC-Address-Map
