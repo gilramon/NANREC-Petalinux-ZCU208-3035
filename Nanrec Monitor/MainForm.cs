@@ -8895,8 +8895,8 @@ namespace Monitor
         {
             KratosProtocolFrame Ret = new KratosProtocolFrame();
             try {
-
-                if (io_IncomingBytes[0] != byte.Parse(PREAMBLE))
+                byte[] preamble =StringToByteArray(PREAMBLE);
+                if (io_IncomingBytes[0] != preamble[0])
                 {
                     // recieve channel outside the Kratos protocol 
                     if (io_IncomingBytes[0] == 0x81 && io_IncomingBytes[1] == 0x81 && io_IncomingBytes[2] == 0x81 && io_IncomingBytes[3] == 0x81)
@@ -8985,7 +8985,7 @@ namespace Monitor
                 }
                     else
                     {
-                        SystemLogger.LogMessage(Color.Orange, Color.LightGray, String.Format("Frame not start with 0x4e"), true, false);
+                        SystemLogger.LogMessage(Color.Orange, Color.LightGray, String.Format("Frame not start with [{0}]",PREAMBLE), true, false);
                     }
 
                     io_IncomingBytes = new byte[0];
@@ -9074,7 +9074,7 @@ namespace Monitor
             SystemLogger.LogMessage(Color.Blue, Color.Azure, "", New_Line = false, Show_Time = true);
             SystemLogger.LogMessage(Color.Blue, Color.Azure, "Rx:>", false, false);
 
-            if (i_incomeframe.Preamble != "54")
+            if (i_incomeframe.Preamble != PREAMBLE)
             {
                 SystemLogger.LogMessage(Color.Orange, Color.LightGray, String.Format("Frame not start with 0x54"), true, false);
                 return;
