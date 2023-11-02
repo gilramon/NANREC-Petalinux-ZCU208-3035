@@ -372,7 +372,7 @@ namespace Monitor
         private CheckBox checkBox_RecordToFileTCPClient;
         private CheckBox checkBox_SeverWriteHex;
         private Button button_StopRun;
-        private static readonly string PREAMBLE = "54";
+        private static readonly string PREAMBLE = "4e";
 
 
         /// <summary>
@@ -8896,7 +8896,7 @@ namespace Monitor
             KratosProtocolFrame Ret = new KratosProtocolFrame();
             try {
 
-                if (io_IncomingBytes[0] != 0x54)
+                if (io_IncomingBytes[0] != byte.Parse(PREAMBLE))
                 {
                     // recieve channel outside the Kratos protocol 
                     if (io_IncomingBytes[0] == 0x81 && io_IncomingBytes[1] == 0x81 && io_IncomingBytes[2] == 0x81 && io_IncomingBytes[3] == 0x81)
@@ -8985,7 +8985,7 @@ namespace Monitor
                 }
                     else
                     {
-                        SystemLogger.LogMessage(Color.Orange, Color.LightGray, String.Format("Frame not start with 0x54"), true, false);
+                        SystemLogger.LogMessage(Color.Orange, Color.LightGray, String.Format("Frame not start with 0x4e"), true, false);
                     }
 
                     io_IncomingBytes = new byte[0];
