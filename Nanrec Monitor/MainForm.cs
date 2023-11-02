@@ -1571,7 +1571,7 @@ namespace Monitor
             this.tabPage_Commands.Name = "tabPage_Commands";
             this.tabPage_Commands.Size = new System.Drawing.Size(1414, 648);
             this.tabPage_Commands.TabIndex = 11;
-            this.tabPage_Commands.Text = "T - 3041 CLI";
+            this.tabPage_Commands.Text = "Nanrec CLI";
             this.tabPage_Commands.UseVisualStyleBackColor = true;
             // 
             // groupBox40
