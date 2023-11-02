@@ -12,3 +12,10 @@ C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\o
 C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\obj\Debug\Gil_Server.csproj.CoreCompileInputs.cache
 C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\obj\Debug\Gil_Server.dll
 C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\obj\Debug\Gil_Server.pdb
+C:\Projects\NANREC-Petalinux-ZCU208-3035\Nanrec Monitor\Gil_Server\bin\Debug\Gil_Server.XML
+C:\Projects\NANREC-Petalinux-ZCU208-3035\Nanrec Monitor\Gil_Server\bin\Debug\Gil_Server.dll
+C:\Projects\NANREC-Petalinux-ZCU208-3035\Nanrec Monitor\Gil_Server\bin\Debug\Gil_Server.pdb
+C:\Projects\NANREC-Petalinux-ZCU208-3035\Nanrec Monitor\Gil_Server\obj\Debug\Gil_Server.csproj.AssemblyReference.cache
+C:\Projects\NANREC-Petalinux-ZCU208-3035\Nanrec Monitor\Gil_Server\obj\Debug\Gil_Server.csproj.CoreCompileInputs.cache
+C:\Projects\NANREC-Petalinux-ZCU208-3035\Nanrec Monitor\Gil_Server\obj\Debug\Gil_Server.dll
+C:\Projects\NANREC-Petalinux-ZCU208-3035\Nanrec Monitor\Gil_Server\obj\Debug\Gil_Server.pdb

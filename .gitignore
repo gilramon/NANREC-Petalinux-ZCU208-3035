@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+Nanrec Monitor/Gil_Server/obj/Debug/Gil_Server.csproj.FileListAbsolute.txt
+*.cache
+*.pdb
+*.dll
+*.manifest
+*.exe
+Nanrec Monitor/.vs/Nanrec - 3035/v17/.suo
