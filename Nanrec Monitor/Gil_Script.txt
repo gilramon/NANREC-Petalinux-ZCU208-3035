@@ -1,0 +1,6 @@
+//Gil: set to counter
+WriteReg32 a01a0060 00000003
+//Set to get from pattern generator
+WriteReg32 a01a0094 0000018c
+//Run
+WriteReg32 a01a0090 00000001

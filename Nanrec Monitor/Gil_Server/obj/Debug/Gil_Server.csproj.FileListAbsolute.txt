@@ -1,0 +1,14 @@
+C:\A53-standalone-with-ethernet\T Monitor\Gil_Server\bin\Debug\Gil_Server.XML
+C:\A53-standalone-with-ethernet\T Monitor\Gil_Server\bin\Debug\Gil_Server.dll
+C:\A53-standalone-with-ethernet\T Monitor\Gil_Server\bin\Debug\Gil_Server.pdb
+C:\A53-standalone-with-ethernet\T Monitor\Gil_Server\obj\Debug\Gil_Server.csproj.AssemblyReference.cache
+C:\A53-standalone-with-ethernet\T Monitor\Gil_Server\obj\Debug\Gil_Server.csproj.CoreCompileInputs.cache
+C:\A53-standalone-with-ethernet\T Monitor\Gil_Server\obj\Debug\Gil_Server.dll
+C:\A53-standalone-with-ethernet\T Monitor\Gil_Server\obj\Debug\Gil_Server.pdb
+C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\bin\Debug\Gil_Server.XML
+C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\bin\Debug\Gil_Server.dll
+C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\bin\Debug\Gil_Server.pdb
+C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\obj\Debug\Gil_Server.csproj.AssemblyReference.cache
+C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\obj\Debug\Gil_Server.csproj.CoreCompileInputs.cache
+C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\obj\Debug\Gil_Server.dll
+C:\Users\gilra\Documents\GitHub\Petalinux-building-ZCU216\T Monitor\Gil_Server\obj\Debug\Gil_Server.pdb
